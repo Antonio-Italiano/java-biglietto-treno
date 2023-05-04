@@ -6,20 +6,17 @@ public class CalcolaBiglietto {
 
 	public static void main(String[] args) {
 		//INIZIALIZZO SCANNER
-		Scanner km = new Scanner(System.in);
+		Scanner in = new Scanner(System.in);
 		
 		//CHIEDO I KM DA PERCORRERE
 		System.out.println("Inserisci in numero di Km da percorrere");
-		int userKm = km.nextInt();
-		System.out.println("km inseriti " + userKm + "km");
-		
-		
-		//INIZIALIZZO SCANNER
-		Scanner age = new Scanner(System.in);
+		int userKm = in.nextInt();
 		
 		//CHIEDO QUANTI ANNI HA
 		System.out.println("Inserisci la tua età");
-		int userAge = age.nextInt();
+		int userAge = in.nextInt();
+		
+		System.out.println("km inseriti " + userKm + "km");		
 		System.out.println("La tua età " + userAge);
 		
 		
@@ -32,10 +29,11 @@ public class CalcolaBiglietto {
 			int sconto = userKm * 40 / 100;
 			int price = userKm - sconto;
 			System.out.println("Il prezzo del tuo biglietto è " + price * 0.21);
+		} else {
+			System.out.println("Il prezzo del tuo biglietto è " + userKm * 0.21);
 		}
-		
 		//CHIUDO FLUSSO DI INFORMAZIONI
-		age.close();
-		km.close();
+		in.close();
+		
 	}
 }
